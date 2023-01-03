@@ -1,0 +1,5 @@
+reload-config-command-description: "config.ymlを再読み込みします。"
+config-reloaded: "config.ymlを再読み込みしました。"
+
+reload-msg-config-command-description: "message.ymlを再読み込みします。"
+msg-config-reloaded: "message.ymlを再読み込みしました。"

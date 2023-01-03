@@ -1,11 +1,15 @@
 package com.monster2408.banbackwalk.listeners;
 
+import com.monster2408.banbackwalk.BanBackWalk;
+import com.monster2408.banbackwalk.utils.api.MainAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +44,19 @@ public class BukkitPlayerMoveEvent implements Listener {
         if (isBackWalk(to, from, player) && !timeCoolList.contains(uuid)) {
             timeCoolList.add(uuid);
             if (loc.getWorld() == null) return;
-            loc.getWorld().createExplosion(loc, 1f);
+            for (int n = 0; n < MainAPI.getExplosionTime(); n++) loc.getWorld().createExplosion(loc, MainAPI.getExplosionLevel());
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    removeCoolTime(uuid);
+                }
+            }.runTaskLaterAsynchronously(BanBackWalk.plugin, MainAPI.getExplosionCoolTime()*20L);
         }
+    }
+
+    public static void removeCoolTime(UUID uuid) {
+        if (timeCoolList == null) timeCoolList = new ArrayList<>();
+        timeCoolList.remove(uuid);
     }
 
 

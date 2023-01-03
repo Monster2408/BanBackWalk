@@ -1,0 +1,10 @@
+# Power of explosion
+explosion-level: 1
+# Number of explosions
+explosion-time: 3
+# Explosion cooldown time(seconds)
+explosion-cool-time: 3
+# language file( message_en.yml or message_ja.yml )
+message-config-file-name: "message_en.yml"
+# Don't touch
+debug: false

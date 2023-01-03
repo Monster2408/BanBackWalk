@@ -6,9 +6,3 @@
 </p>
 <p align="center">No backward movement is allowed.</p>
 <p align="center">spigot 1.18 plugin</p>
-
-# memo
-- Yaw =     0: Z--
-- Yaw =    90: X++
-- Yaw = +-180: Z++
-- Yaw =   -90: X--

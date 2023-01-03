@@ -6,3 +6,8 @@ prefix: BanBackWalk
 authors: [ Monster2408, BanNInSan_ ]
 description: No backward movement is allowed.
 website: https://monster2408.com/
+
+commands:
+    bbwalk:
+        description: Main Command
+        permission: bbwalk.admin

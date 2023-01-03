@@ -1,0 +1,5 @@
+reload-config-command-description: "Reload config.yml."
+config-reloaded: "Reloaded config.yml."
+
+reload-msg-config-command-description: "Reload message.yml."
+msg-config-reloaded: "Reloaded message.yml."
